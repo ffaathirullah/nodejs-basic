@@ -5,7 +5,7 @@ app.set("views", "./views"); // specify the views directory
 app.set("view engine", "ejs"); // register the template engine
 app.get("/", (req, res) => {
   {
-    res.render("index");
+    res.render("index", { name: "Agus" });
   }
 });
 app.get("/:name", (req, res) => {
