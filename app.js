@@ -1,9 +1,12 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-
+app.set("views", "./views"); // specify the views directory
+app.set("view engine", "ejs"); // register the template engine
 app.get("/", (req, res) => {
-  res.send("Hello World  Welcome 1!");
+  {
+    res.render("index");
+  }
 });
 app.get("/:name", (req, res) => {
   res.send(`Nama Saya : ${req.params.name}`);
